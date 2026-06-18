@@ -1,113 +1,183 @@
-# טבלת בעיות עסקיות — קדם אספקה בע"מ
+# Business Problems Analysis — Daniel Rowing Center
 
-**מסמך:** ניתוח בעיות מצב קיים  
-**מקור:** ראיונות עם בעלי עניין (נובמבר 2025)  
-**מוכן על ידי:** צוות הפרויקט
-
----
-
-## הצהרת הבעיה — רמת הארגון
-
-### 1. מצב רצוי
-
-מנהלות משמרת יוצרות הזמנות במהירות ובאמצעות טופס מובנה; כל עובד רואה את ההזמנות המוקצות לו בלבד וסומן את סיום ביצוען ישירות מהמכשיר שלו; מנהלי המשמרת עוקבים אחר סטטוס הזמנות בזמן אמת ללא צורך ליצור קשר עם עובדים; קטלוג המוצרים מעודכן תמיד וגלוי לכל בעל תפקיד מורשה; המנכ"ל יכול לראות תמונת מצב עסקית (הזמנות, הכנסות, ביצועי עובדים) בכל עת.
-
-### 2. הבעיה הנוכחית ומשמעותה
-
-קדם אספקה בע"מ מנהלת את כל פעילות ניהול ההזמנות, העובדים וקטלוג המוצרים באמצעות Excel ו-WhatsApp בלבד — ללא מערכת מידע ייעודית. כל תהליך מרכזי (יצירת הזמנה, הקצאת עובד, מעקב סטטוס, עדכון מחירים) מתבצע ידנית, ללא אכיפת חוקים עסקיים וללא תיעוד אוטומטי. המשמעות: כל שגיאה אנושית — כתובת שגויה, הקצאה כפולה, מחיר ישן — מגיעה ישירות ללקוח, ואין מנגנון לזיהוי, תיקון או מניעה של שגיאות חוזרות. המערכת הנוכחית אינה מאפשרת לחברה לצמוח לסניף נוסף.
-
-### 3. השלכות כלכליות
-
-| הערה | עלות שנתית משוערת | מקור |
-|---|---|---|
-| הקלדה ידנית + שיחות סטטוס + איסוף נתונים ידני | **~₪87,000** | P-01, P-03, P-05, P-11 |
-| נסיעות כושלות, כפילויות, שגיאות תמחור | **~₪23,000** | P-02, P-04, P-06 |
-| פוטנציאל אובדן לקוחות (כפילות, מידע שדלף, מחירים שגויים) | **₪50,000–80,000** | P-02, P-06, P-09 |
-| עיכוב פתיחת סניף נוסף (כל 6 חודשים) | **₪75,000–100,000** | P-12 |
-| **סה"כ ניתן לכימות (ישיר בלבד)** | **~₪110,000/שנה** | |
-
-### 4. סימפטומים
-
-- שני עובדים הגיעו לאותה כתובת — פעמיים בחודש האחרון
-- עובד נסע לכתובת שגויה ובזבז שעה בגלל הודעת WhatsApp לא ברורה
-- עובד הגיש הזמנה שכבר בוצעה — מנהלת לא ידעה שהיא הושלמה
-- מנכ"ל שילם מכיסו על משלוח שלא ניתן לאמת אם בוצע
-- מנכ"ל אינו יודע כמה הזמנות בוצעו השבוע ללא פנייה ידנית לרינת או בועז
-- עובדים ממתינים 20 דקות בתחילת משמרת עד שמנהלת מתפנה להקצות הזמנות
-
-### 5. פתרון אפשרי
-
-מערכת WinForms מבוססת SQL Server לניהול הזמנות, עובדים וקטלוג מוצרים — עם הפרדת הרשאות לפי תפקיד (מנהל משמרת / עובד שטח), ממשק ייעודי לכל תפקיד, ותיעוד אוטומטי של כל פעולה.
-
-### 6. תועלות
-
-- **חיסכון של ~3 שעות/יום** בזמן ניהולי שמבוזבז כיום על הקלדה ידנית ובדיקות סטטוס
-- **אפס כפילויות הקצאה** — כל הזמנה מוקצית לעובד אחד ברמת מסד הנתונים
-- **עובד עצמאי** — רואה את ההזמנות שלו ומסמן סיום ללא תלות במנהלת
-- **תמונת מצב עסקית בזמן אמת** למנכ"ל ולמנהלי משמרת
-- **בסיס טכנולוגי לצמיחה** — ארכיטקטורה שתתמוך בסניף נוסף
-
-### 7. סיכום
-
-> קדם אספקה בע"מ מפסידה **~₪110,000 בשנה** ומסכנת את יכולת הצמיחה שלה בגלל ניהול הזמנות ידני המבוסס Excel ו-WhatsApp — מערכת מידע ייעודית תחסוך את העלויות האלה ותאפשר לחברה לפתוח את הסניף הנוסף המתוכנן.
+**Document:** Current State Analysis — Business Problems Analysis  
+**Source:** Stakeholder Interviews and Field Observations (March–April 2026)  
+**Prepared by:** Project Team
 
 ---
 
-## טבלת הבעיות
+# Organizational Problem Statement
 
-| מחייב דרישה | פתרון רצוי | הועלה ע"י | השפעה כמותית | בעיה עסקית | גורם לבעיה | # |
-|---|---|---|---|---|---|---|
-| US-19, US-20 | טופס ייעודי עם שדות קבועים, רשימת עובדים, ואימות שדות חובה | רינת לוי — ראיון 1 | **~3 שעות יצרניות אבודות מדי יום:** 25 הזמנות × 12 דקות ממוצע = ~5 שעות סה"כ ב-2 משמרות. בשכר מנהלת ₪60/שעה — עלות ₪180/יום, **₪3,900/חודש** על הקלדה בלבד. שגיאות כתובת גורמות לכ-2 משלוחים כושלים בשבוע: עלות נסיעה + זמן נהג = **~₪400/חודש** | יצירת הזמנה לוקחת 10–15 דקות ומועדת לשגיאות הקלדה, בעיקר בכתובת המשלוח | תהליך יצירת הזמנה ידני ולא מובנה (Excel + WhatsApp) | P-01 |
-| US-19, US-20 | כל הזמנה תוקצה לעובד אחד בלבד במסך יצירת ההזמנה | רינת לוי — ראיון 1; דן מזרחי — ראיון 2 | **2 תקריות בחודש** (ציטוט רינת: "פעמיים בחודש האחרון"): כל תקרית = 2 עובדים × ~45 דקות נסיעה + דלק = **~₪250/תקרית**, **₪500/חודש**. בנוסף — לקוח שחווה כפילות עוזב: אובדן לקוח ממוצע שווה ~**₪4,000/שנה** בהכנסות חוזרות | שני עובדים הגיעו פעמיים לאותה כתובת — בזבוז זמן ומבוכה ללקוח | אין מנגנון רשמי להקצאת הזמנה לעובד ספציפי | P-02 |
-| US-21 | ממשק אישי לעובד המציג רק את ההזמנות המוקצות לו | דן מזרחי — ראיון 2 | **~20 דקות המתנה לעובד** בתחילת משמרת כשמנהלת עסוקה (ציטוט דן: "לפעמים אני עומד ומחכה עשרים דקות"). ב-4 עובדים למשמרת: **80 דקות אבודות ליום**, ~**₪120/יום** בשכר עובדים ללא תפוקה, **₪2,600/חודש** | עובדים ממתינים בחוסר מעש בתחילת משמרת; תלות ביזמת המנהלת | עובדים לא יודעים אילו הזמנות מוקצות להם עד שמנהלת אומרת בעל פה | P-03 |
-| US-22 | מסך פרטי הזמנה עם כל השדות: כתובת, סניף, רשימת מוצרים וכמויות | דן מזרחי — ראיון 2 | **כ-2 תקריות שגיאה בשבוע** עקב פרטים חסרים. כל תקרית: שעת נסיעה אבודה + דלק = ₪80–100 (ציטוט דן: "בזבזתי שעה" על כתובת שגויה). **₪700–800/חודש** בזמן נסיעה מבוזבז. לקוחות שחיכו לאספקה שלא הגיעה בזמן — **ביטול הזמנה בשיעור ~15%** מהתקריות | עובד הגיע לכתובת שגויה; עובד לא ידע אילו מוצרים לקחת | פרטי ההזמנה מגיעים לעובד כהודעת WhatsApp חופשית, לא מובנית | P-04 |
-| US-31 | כפתור "סמן כהושלם" זמין לעובד מתוך מסך פרטי ההזמנה | דן מזרחי — ראיון 2; רינת לוי — ראיון 1 | מנהלת מתקשרת לעובדים ~**5 פעמים במשמרת** לבדיקת סטטוס: ~15 דקות/משמרת × 2 = **30 דקות/יום**, **₪30/יום**, **₪650/חודש**. משלוח כפול שכבר בוצע: בזבוז מלאי + שכר עובד = **~₪200/תקרית**; לפחות תקרית אחת מתועדת. בנוסף — אי-שביעות רצון לקוח שמקבל שיחה "מתי תגיע?" על הזמנה שכבר הסתיימה | מנהלת לא יודעת מה הסטטוס; הזמנה שהושלמה נשלחה פעם שנייה | אין דרך לעובד לסמן שהזמנה הושלמה באופן רשמי | P-05 |
-| US-36, US-37, US-38 | קטלוג מרכזי ממוחשב שמנהלת המשמרת מעדכנת; גלוי לכולם בזמן אמת | רינת לוי — ראיון 1 | **3–4 שגיאות תמחור בחודש** (מחיר שהוצג ללקוח שונה מהמחיר בחשבונית): הפסד ממוצע ₪40/שגיאה = **₪120–160/חודש** ישיר. כאשר המחיר שנגבה גבוה מהמחירון — תלונת לקוח ולעתים זיכוי; כאשר נמוך — הפסד ישיר. 2–3 לקוחות בשנה עוזבים עקב חוסר אמון במחירים: **₪8,000–12,000/שנה** אובדן הכנסה | עובדים בשטח עובדים עם מחירון ישן; מנהלות לא בטוחות במחירים עדכניים | קטלוג המוצרים מעודכן רק פעם בחודש (הדפסת Excel) | P-06 |
-| US-09, US-10, US-11, US-12 | מסך ייעודי לניהול עובדים: הוספה, עדכון, מחיקה — מקום אחד | רינת לוי — ראיון 1 | קליטת עובד חדש: ~**2 שעות עדכון ידני** פרוסות על-פני 3 מערכות (WhatsApp, Excel, תיק נייר) = **₪120 למנהלת**. עם תחלופה של ~4 עובדים/שנה: **₪480/שנה** בזמן ניהולי. תקרית כזו כבר קרתה: עובד שלא הופיע ברשימה יצר עיכוב של חצי-יום ב-onboarding — **~₪180 הפסד תפוקה** | שכחו לעדכן גיליון Excel עם עובד חדש; עובד לא הופיע ברשימה | מידע על עובדים מפוצל בין WhatsApp, Excel ותיק נייר | P-07 |
-| US-13, NFR-05 | הגדרת תפקידים (Enum) + ניתוב אוטומטי לפי תפקיד לאחר כניסה | עמי בן-דוד — ראיון 3 | עובד שטח שגישם הזמנה ללקוח לא נכון (ללא הרשאת מנהל) — תיקון ידני + שיחת התנצלות ללקוח: **~₪150/תקרית** זמן מנהלת. בלי נתונים לכמה תקריות כאלה מתרחשות — אבל כל טעות בהזמנה שלא אושרה כראוי עלולה לגרום לביטול ואובדן לקוח | לא ברור מי מורשה לעשות מה; הרשאות לא נאכפות | תפקידי עובדים (Worker / Shift Manager) לא מנוהלים רשמית | P-08 |
-| NFR-05, NFR-06 | גישה למידע לפי תפקיד בלבד; עובד רואה רק את ההזמנות שלו | עמי בן-דוד — ראיון 3 | **סיכון ממשי לאובדן לקוחות:** עובד שעוזב מכיר 100% ממאגר הלקוחות + מחירים. אם מתחרה יעשה שימוש במידע — אובדן פוטנציאלי של **10–15 לקוחות עסקיים** = **₪40,000–60,000/שנה**. בנוסף — חשיפה לתביעה עם כניסת **חוק הגנת הפרטיות**: קנסות של עד **₪50,000** | עובד שעזב יכול לקחת מידע על לקוחות; כתובות וסכומים גלויים לכולם | אין הפרדת הרשאות — כל עובד רואה את כל המידע בקבוצת WhatsApp | P-09 |
-| NFR-16 (בסיס), US-61 (עתידי) | כל פעולה (יצירה, עדכון, מחיקה) תתועד עם זהות המבצע ותאריך | עמי בן-דוד — ראיון 3 | **הפסד מתועד:** עמי שילם מכיסו על משלוח שלא ניתן לאמת — ציטוט: "בסוף פשוט שלחתי שוב על חשבוני". עלות תקרית אחת: **₪400–600** (שליחה חוזרת + ערך ההזמנה). בקצב של **2–3 תקריות בשנה**: **₪1,000–1,800/שנה** הפסד ישיר. ללא תיעוד — החברה לא יכולה לדחות תביעות סרק | לא ניתן לחקור תלונת לקוח על משלוח שלא הגיע; מנכ"ל שילם מכיסו | אין תיעוד של פעולות במערכת | P-10 |
-| US-51, US-52, US-53 (עתידי) | דוחות מסכמים: הזמנות לפי תקופה, הכנסות, ביצועי עובדים | עמי בן-דוד — ראיון 3 | עמי מבזבז **~30–40 דקות בשבוע** על איסוף נתונים ידני מרינת/בועז ("לפעמים הם שולחים, לפעמים לא"). **~2.5 שעות/חודש** זמן מנכ"ל = **₪300–400/חודש**. בנוסף: החלטות עסקיות על בסיס נתונים חסרים — עיכוב בזיהוי בעיות שיכלו להציל **₪10,000–20,000** בהכנסות שנתיות | מנכ"ל לא יודע כמה הזמנות בוצעו, מה ההכנסה, מי העובד הטוב ביותר | אין יכולת ניהולית לראות תמונת מצב עסקית | P-11 |
-| NFR-04, NFR-24 | מערכת ממוחשבת עם מסד נתונים שניתן להרחיב; ארכיטקטורה ברת-סקייל | עמי בן-דוד — ראיון 3 | **עיכוב בפתיחת סניף שני** שתוכנן לשנה הבאה. הכנסה שנתית משוערת מסניף נוסף: **₪150,000–200,000**. כל עיכוב של 6 חודשים = **₪75,000–100,000 הכנסה אבודה**. ללא מערכת — הפתיחה בלתי אפשרית בפועל: "עם מה שיש עכשיו — אי-אפשר" (ציטוט עמי) | עמי רוצה לפתוח סניף נוסף; המערכת הנוכחית לא תתמוך בזה | המערכת הנוכחית (Excel + WhatsApp) לא תומכת בצמיחה | P-12 |
+## 1. Desired State
+
+Daniel Rowing Center should operate through a centralized information system that manages customers, employees, activities, boats, equipment, maintenance operations, attendance reporting, payroll validation, and communication with parents.
+
+Coordinators should be able to schedule activities, assign instructors and boats, monitor equipment availability, and track attendance in real time. Customers should be able to register digitally, submit required documents online, and receive automatic notifications regarding activities and membership status.
+
+Management should have access to real-time operational and financial information through centralized dashboards and reports, without the need to manually collect data from multiple systems.
 
 ---
 
-## סיכום עלויות משוערות
+## 2. Current Situation and Business Impact
 
-| הערה | עלות חודשית משוערת | בעיות קשורות | קטגוריה |
-|---|---|---|---|
-| הוצאה ישירה בשכר מנהלות + מנכ"ל | ₪4,550 | P-01, P-05, P-11 | זמן ניהולי מבוזבז (הקלדה, סטטוס, איסוף נתונים) |
-| עבודה שלא הניבה ערך | ₪3,800 | P-02, P-03, P-04 | זמן עובדי שטח מבוזבז (המתנה, נסיעות שגויות, כפילויות) |
-| הפסד ישיר | ₪800 | P-05, P-06 | שגיאות תמחור ומשלוחים כפולים |
-| קשה לכמת — פוטנציאל ₪50,000+/שנה | — | P-02, P-06, P-09 | אובדן לקוחות (כפילות, מחירים, דליפת מידע) |
-| חשיפה לקנסות + תביעות | — | P-09, P-10 | סיכון משפטי (אין תיעוד, אין הרשאות) |
-| **~₪110,000/שנה** | **~₪9,150/חודש** | | **סה"כ עלויות ניתנות לכימות** |
+Daniel Rowing Center currently relies on several disconnected information systems, including Priority, Synel, Fizikal, Kehila, Coing, Excel spreadsheets, Google Sheets, WhatsApp groups, and phone calls.
 
-> **הערה:** הנתונים מבוססים על הערכות ממוצעות מהראיונות ועל גודל הארגון (25 הזמנות/יום, 2 משמרות, 12 עובדים). בשלב ניתוח מצב קיים מספיקה דיוק של סדר-גודל — המטרה היא להמחיש שהבעיה בעלת ערך עסקי ולא רק אי-נוחות.
+Many core business processes still require manual intervention, including customer registration, attendance tracking, payroll validation, maintenance management, discount approvals, and communication with parents.
 
----
+As a result:
 
-## מיפוי בעיות → החלטות עיצוב
-
-| היכן ממומשת | החלטת עיצוב | בעיה |
-|---|---|---|
-| `DeliveryOrder.cs`, `PickupOrder.cs` | טפסים ייעודיים נפרדים: `CreateDeliveryOrderPanel` ו-`CreatePickupOrderPanel` עם שדות קבועים ואימות | P-01 — יצירת הזמנה איטית |
-| טבלת `Orders`, FK `workerId` | כל הזמנה נשמרת עם FK לעובד יחיד ברמת מסד הנתונים | P-02 — כפילות הקצאה |
-| `Order.getOrders(workerId)` | `WatchOrdersPanel` מציג רק הזמנות של העובד המחובר | P-03 — עובד לא יודע מה יש לו |
-| `OrderDetailsPanel.cs`, `OrderItem.cs` | `OrderDetailsPanel` מציג את כל פרטי ההזמנה: כתובת/סניף, מוצרים, כמויות | P-04 — פרטים חסרים בשטח |
-| `OrderDetailsPanel.cs`, `SP_UpdateOrderStatus` | כפתור "סמן כהושלם" מופיע רק כשסטטוס = "פתוחה" — UC מסוג extend | P-05 — אין סימון הושלם |
-| `Product.cs`, `initProducts()` | `Program.products` נטען בזמן אתחול; `ManageProductPanel` מאפשר עדכון בזמן אמת | P-06 — קטלוג לא עדכני |
-| `Worker.cs`, `UpdateDeletePanel.cs` | מסך `UpdateDeletePanel` — ניהול עובדים ממקום אחד; `Program.workers` | P-07 — פיצול מידע עובדים |
-| `Title.cs`, `LoginPanel.cs` | `Title` enum + ניתוב ב-`LoginPanel` לפי תפקיד + בדיקת הרשאה בכל מסך ניהול | P-08 — הרשאות לא נאכפות |
-| `WatchOrdersPanel.cs`, `CRUDPanel.cs` | עובד רואה רק את ההזמנות שלו (`getOrders` מסונן); מנהל רואה הכל | P-09 — חשיפת מידע לא מורשית |
-| `NFR-16`, `NFR-15` | כל Create/Update/Delete עובר דרך Stored Procedure — בסיס לאודיט עתידי | P-10 — אין תיעוד פעולות |
-| `Program.cs`, `initLists()` | ארכיטקטורת in-memory (`Program.*`) מאפשרת חישוב דוחות מהיר ללא DB calls | P-11 — אין דוחות |
-| `scripts/create_database.sql` | מסד נתונים מרכזי (SQL Server) + ארכיטקטורה מבוססת-ישויות שניתן להוסיף אליה | P-12 — לא ניתן להרחיב |
+- Information is fragmented across multiple systems.
+- Administrative workload is high.
+- Payroll validation requires monthly manual review.
+- Equipment maintenance history is difficult to track.
+- Customer registration is slow and error-prone.
+- Organizational knowledge depends heavily on specific employees.
+- Management lacks real-time visibility into operational activities.
 
 ---
 
-## הערות
+## 3. Operational Symptoms
 
-- הבעיות P-01 עד P-09 מטופלות בגרסה הנוכחית (✅ Implemented / ✅ בסיס קיים).
-- הבעיות P-10 ו-P-11 מטופלות חלקית — הארכיטקטורה תומכת בפתרון, אך ממשק הדוחות עדיין בפיתוח (🔮 Future).
-- הבעיה P-12 מטופלת בהחלטות הארכיטקטורה (SQL Server, OOP), אך הגדרת Connection String ב-`app.config` עדיין חלקית (🚧 Partial).
+- Equipment failures are reported through WhatsApp groups.
+- Boat maintenance is tracked using Excel spreadsheets.
+- Attendance is managed manually through Google Sheets.
+- Customer registration is performed through phone calls.
+- Discount eligibility is verified manually.
+- Payroll reports require monthly manual validation.
+- Parent communication depends on coordinators.
+- Organizational knowledge is stored in personal files and conversations.
+
+---
+
+## 4. Proposed Solution
+
+Implementation of **My Daniel**, a centralized information system that integrates:
+
+- Customer Management
+- Employee Management
+- Activity Scheduling
+- Attendance Tracking
+- Payroll Validation
+- Boat and Equipment Management
+- Maintenance Tracking
+- Parent Communication
+- Discount Management
+- Business Intelligence (BI) Reporting
+
+The system will provide a single source of truth for all operational and managerial activities within the organization.
+
+---
+
+## 5. Expected Benefits
+
+### Operational Benefits
+
+- Reduced administrative workload
+- Faster process execution
+- Improved information accuracy
+- Better resource utilization
+- Standardized workflows
+
+### Managerial Benefits
+
+- Real-time access to organizational data
+- Improved decision-making capabilities
+- Better visibility into activities and resources
+- Centralized reporting and analytics
+
+### Customer Benefits
+
+- Faster registration process
+- Improved communication
+- Greater transparency
+- Better customer experience
+
+---
+
+## 6. Summary
+
+Daniel Rowing Center currently operates through a combination of disconnected systems and manual processes. This situation creates inefficiencies, increases dependency on employees, and limits management's ability to monitor operations effectively.
+
+A centralized information system would improve operational efficiency, reduce errors, enhance customer service, and provide management with real-time access to organizational information.
+
+---
+
+# Problems Table
+
+| ID | Root Cause | Business Problem | Reported By | Proposed Solution |
+|------|------|------|------|------|
+| P-01 | Equipment maintenance is managed through Excel files and WhatsApp communication | Lack of structured tracking of equipment failures, boat availability, and maintenance history | Center Manager, Sailing Coordinator | Centralized maintenance and equipment management system |
+| P-02 | Information is distributed across multiple systems and spreadsheets | Limited access to complete and up-to-date information, requiring manual cross-checking | Center Manager | Centralized information system |
+| P-03 | Low participation and instructor availability in the kayaking program | Underutilization of resources and financial loss | Center Manager | Improved marketing and customer acquisition processes |
+| P-04 | Customer information is collected manually through phone calls | Risk of data-entry errors, inconsistent information, and dependency on administrative staff | Accounting Manager | Digital registration platform |
+| P-05 | Employee attendance reporting is inconsistent and requires manual corrections | High administrative workload and payroll calculation errors | Center Manager, Sailing Coordinator, Accounting Manager | Automatic attendance and payroll synchronization |
+| P-06 | Data analysis relies on Excel spreadsheets and manual reporting | Difficulty generating insights and making data-driven decisions | Center Manager, Accounting Manager | Business Intelligence (BI) platform |
+| P-07 | Discount approvals are performed manually | Unauthorized discounts and revenue loss | Accounting Manager | Automated discount validation process |
+| P-08 | Lack of structured organizational documentation | Dependency on employee knowledge and risk of knowledge loss | Sailing Coordinator | Centralized organizational knowledge base |
+| P-09 | Communication with parents relies on phone calls and WhatsApp groups | Communication inconsistencies and missed updates | Sailing Coordinator | Centralized communication platform |
+| P-10 | Attendance tracking is performed manually through Google Sheets | Inconsistent attendance monitoring and reporting errors | Sailing Coordinator | Real-time attendance management system |
+
+---
+
+# Problem Categorization
+
+## Information Management Problems
+
+- P-02: Fragmented Information Systems
+- P-08: Lack of Organizational Knowledge Management
+
+### Impact
+
+- Duplicate work
+- Inconsistent data
+- Delayed decision-making
+- Knowledge loss
+
+---
+
+## Operational Process Problems
+
+- P-04: Manual Customer Registration
+- P-05: Payroll Validation Process
+- P-10: Manual Attendance Tracking
+
+### Impact
+
+- High administrative workload
+- Increased human errors
+- Slow process execution
+
+---
+
+## Equipment and Maintenance Problems
+
+- P-01: Equipment Maintenance Tracking
+
+### Impact
+
+- Lack of maintenance visibility
+- Missing maintenance history
+- Reduced equipment utilization
+
+---
+
+## Customer and Communication Problems
+
+- P-07: Manual Discount Validation
+- P-09: Parent Communication Management
+
+### Impact
+
+- Poor customer experience
+- Revenue leakage
+- Communication inefficiencies
+
+---
+
+# Business Justification
+
+The analysis indicates that the organization's most significant operational challenges stem from manual processes, fragmented information systems, and lack of integration between departments.
+
+The implementation of the My Daniel information system will address these challenges by providing a centralized platform for managing customers, employees, activities, equipment, maintenance operations, payroll processes, and organizational reporting.
+
+This solution will improve operational efficiency, reduce dependency on manual work, increase information accuracy, and support future organizational growth.
