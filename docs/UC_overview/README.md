@@ -46,12 +46,12 @@ The use case model serves as a bridge between the organizational analysis phase 
 
 ---
 
-## Relationship to Other Documents
+## Related Documents
 
-- `docs/org-analysis/` — Organizational analysis, interviews, business problems, and BPMN diagrams
-- `docs/00-requirements.md` — Functional and non-functional requirements derived from the use cases
-- `docs/00a-desired-system.md` — Proposed My Daniel system description
-
+- `docs/00e-use-cases.md` — Main use case specification document containing the complete use case model and actor interactions. The materials in this folder provide supporting diagrams, selected use case descriptions, and MSS documentation related to this file.
+- `docs/00-requirements.md` — Functional and non-functional requirements derived from the use cases.
+- `docs/org-analysis/` — Organizational analysis, interviews, business problems, and BPMN diagrams.
+- `docs/00a-desired-system.md` — Proposed My Daniel system description.
 ---
 
 ## How to Use This Folder
