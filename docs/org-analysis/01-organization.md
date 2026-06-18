@@ -1,91 +1,226 @@
-# תיאור הארגון — קדם אספקה בע"מ
+# Organization Description — Daniel Rowing Center
 
-**מסמך:** חקר מצב קיים — תיאור ארגוני  
-**תאריך:** נובמבר 2025  
-**מוכן על ידי:** צוות הפרויקט
-
----
-
-## 1. פרופיל הארגון
-
-**שם:** קדם אספקה בע"מ  
-**תחום:** הפצה ואספקה של מוצרי משרד, ניקיון ואחזקה לעסקים  
-**מיקום:** אזור תעשייה צפון, באר שבע  
-**שנת הקמה:** 2018  
-**גודל:** 12 עובדים  
-**מייסד ומנכ"ל:** עמי בן-דוד
-
-החברה מספקת מוצרי משרד, ניקיון ואחזקה לעסקים קטנים ובינוניים, קליניקות, ומשרדים בבאר שבע וסביבתה (רדיוס של כ-30 ק"מ). הלקוחות מזמינים בטלפון או ב-WhatsApp, והחברה מספקת את ההזמנה בשני אופנים: **משלוח** לכתובת הלקוח, או **איסוף עצמי** מהמחסן. נפח ההזמנות הממוצע הוא 20–30 הזמנות ביום, המחולקות בין שתי משמרות.
+**Document:** Current State Analysis — Organizational Description  
+**Date:** May 2026  
+**Prepared by:** Project Team
 
 ---
 
-## 2. מבנה ארגוני
+## 1. Organization Profile
 
-```
-עמי בן-דוד — מנכ"ל ומייסד
+**Name:** Daniel Rowing Center  
+**Industry:** Water Sports, Rowing and Sailing Activities  
+**Location:** Yarkon River, Tel Aviv, Israel  
+**Type:** Community Sports and Educational Center
+
+Daniel Rowing Center is the largest and most advanced water sports club in Israel. Located on the banks of the Yarkon River in Tel Aviv, the center serves as a professional training facility for Israel's national rowing and sailing teams, while also providing recreational and educational activities for the wider community.
+
+In addition to promoting excellence in competitive sports, the center is committed to social and educational initiatives, with a particular focus on rehabilitation and accessibility. The center operates various para-rowing and therapeutic rowing programs designed for special populations, including breast cancer survivors, youth on the autism spectrum, and individuals with physical or cognitive disabilities.
+
+The organization employs approximately **75 employees**, serves around **300 annual members**, and operates sports programs for approximately **350 children and teenagers**.
+
+---
+
+## 2. Organizational Structure
+
+```text
+Center Manager
 │
-├── רינת לוי — מנהלת משמרת בוקר (06:00–14:00)
-│   ├── דן מזרחי — עובד שטח בכיר
-│   ├── יעל שרון — עובדת שטח
-│   ├── סמי אוחיון — עובד שטח
-│   └── נועה גל — עובדת שטח
+├── Accounting Manager
+├── Human Resources & Administration
+├── Customer Service & Marketing
+├── Sailing Coordinator
+├── Academic Rowing Coordinator
 │
-├── בועז חיון — מנהל משמרת ערב (14:00–22:00)
-│   ├── רם כהן — עובד שטח
-│   ├── לילה נסר — עובדת שטח
-│   ├── אלון ברק — עובד שטח
-│   └── מירי דוד — עובדת שטח
-│
-└── שירה גל — מזכירה ואדמיניסטרציה (לא קשורה לניהול הזמנות)
+├── Instructors
+└── Maintenance Staff
 ```
 
-**תפקיד עובד שטח:** איסוף מוצרים מהמחסן, ביצוע משלוחים, הכנת הזמנות לאיסוף עצמי.  
-**תפקיד מנהל משמרת:** קבלת הזמנות מלקוחות, הקצאת עובדים, פתרון בעיות בשטח, ניהול מלאי בסיסי.
+### Key Roles
+
+| Role | Responsibilities |
+|--------|----------------|
+| Center Manager | Overall management, budgeting, operations, maintenance supervision, and strategic planning |
+| Accounting Manager | Customer registration, payments, payroll processing, supplier management, and financial reporting |
+| Coordinators | Activity planning, instructor scheduling, participant management, and equipment coordination |
+| Instructors | Conducting training sessions and supervising participants |
+| Maintenance Staff | Boat maintenance, equipment repairs, and facility upkeep |
 
 ---
 
-## 3. קטלוג המוצרים
+## 3. Main Activities
 
-החברה מחזיקה כ-80 פריטים פעילים, בשלוש קטגוריות עיקריות:
+The center serves two primary customer groups: children and adults.
 
-| קטגוריה | דוגמאות | מספר פריטים |
-|---|---|---|
-| מוצרי ניקיון | חומר רצפה, סבון ידיים, שקיות אשפה | ~30 |
-| ציוד משרדי | נייר A4, עטים, תיקיות, מחסניות דיו | ~25 |
-| אחזקה כללית | נורות LED, סוללות, מוצרי חשמל קטנים | ~25 |
+### Children's Programs
 
----
+- Sailing Courses
+- Olympic Kayaking
+- Academic Rowing
 
-## 4. מערכות המידע הקיימות
+### Adult Membership Programs
 
-### 4.1 ניהול הזמנות — Excel + WhatsApp
+- Academic Rowing
+- Kayaking
+- Sailing Activities
+- Fitness Facility Access
 
-כל הזמנה נפתחת על ידי מנהל המשמרת בגיליון Excel משותף בשם `הזמנות_[תאריך].xlsx`. הגיליון מכיל עמודות: מספר הזמנה (ידני), שם לקוח, כתובת / סניף, מוצרים (טקסט חופשי), מחיר, עובד מוקצה, סטטוס (ידני: "ממתין / בדרך / הושלם").
+### Community Programs
 
-לאחר יצירת ההזמנה, מנהל המשמרת שולח הודעת WhatsApp לקבוצת העובדים עם פרטי ההזמנה. העובד שמתפנה מודיע בחזרה שהוא לוקח את ההזמנה.
+- Dragon Boat Activities
+- Corporate Team-Building Events
+- Rehabilitation Programs
+- Special Population Activities
 
-**בעיות מוכרות בשיטה:**
-- שני עובדים לעתים לוקחים את אותה הזמנה
-- עדכון סטטוס ("הושלם") תלוי בכך שהעובד יעדכן ידנית או יודיע בוואטסאפ
-- גיליון ה-Excel לא תמיד מעודכן בזמן אמת
-
-### 4.2 ניהול עובדים — קבצי נייר
-
-פרטי העובדים (תעודת זהות, שם, תפקיד, טלפון) נשמרים בתיק נייר פיזי אצל המזכירה. עדכון פרטים דורש מציאת הדף הרלוונטי ועדכון ידני.
-
-### 4.3 קטלוג מוצרים — Excel נפרד
-
-קובץ Excel נפרד: `מחירון_[חודש_שנה].xlsx`. מנהלי המשמרת מדפיסים אותו בתחילת כל חודש. עובדים בשטח אינם תמיד עם הגרסה המעודכנת.
-
-### 4.4 תשתית IT
-
-- 2 מחשבים שולחניים (אחד לכל מנהל משמרת)
-- רשת Wi-Fi מקומית
-- כל העובדים עם טלפונים חכמים אישיים
-- אין שרת, אין מסד נתונים, אין מערכת ייעודית
+Memberships may be individual, couple-based, or family-based, depending on customer needs.
 
 ---
 
-## 5. מסקנה
+## 4. Existing Information Systems
 
-הארגון פועל עם כלים לא ייעודיים (Excel, WhatsApp) שעובדים בנפח הנוכחי אך מגבילים את הצמיחה ויוצרים שגיאות תפעוליות תכופות. המנכ"ל מעוניין במערכת מידע ייעודית שתנהל הזמנות, עובדים וקטלוג מוצרים, ותאפשר לו לקבל תמונת מצב עסקית בזמן אמת.
+### Priority
+
+Priority is the organization's primary financial and accounting system.
+
+**Main Functions**
+
+- Budget management
+- Revenue and expense tracking
+- Supplier management
+- Financial reporting
+- Trial balance generation
+
+The system is primarily used by management, accounting, human resources, and customer service personnel.
+
+---
+
+### Synel
+
+Synel is the workforce attendance and payroll reporting system.
+
+**Main Functions**
+
+- Employee attendance tracking
+- Payroll management
+- Employee role and salary management
+- Membership database management
+- Facility access control
+- Locker room access control
+
+The system is managed by the center administration.
+
+---
+
+### Coing
+
+Coing is used to process payments for one-time customers participating in camps, events, and special activities.
+
+---
+
+### Kehila System
+
+Kehila is a municipal community-center management platform used throughout the city of Tel Aviv.
+
+The system provides access to resident information, allowing staff to quickly retrieve customer details during registration and reducing manual data entry.
+
+---
+
+### Fizikal
+
+Fizikal is a sports center management platform used for:
+
+- Membership management
+- Customer registration
+- Activity scheduling
+- Payment processing
+- Activity calendar management
+
+---
+
+### Manual Registration Process
+
+Registrations for annual memberships and courses are still performed manually through phone calls handled by the reception secretary.
+
+Customer information is collected verbally and entered into the relevant systems by staff members.
+
+---
+
+## 5. Core Business Processes
+
+### 5.1 Inventory and Equipment Maintenance Management
+
+#### Equipment and Boat Tracking
+
+- Equipment checkout registration
+- Boat allocation and return tracking
+- Availability monitoring
+
+#### Inventory and Procurement Management
+
+- Equipment condition monitoring
+- Boat classification and categorization
+- Procurement planning
+- Inventory replenishment
+
+#### Maintenance Operations
+
+- Fault identification
+- Corrective maintenance
+- Preventive maintenance
+- Facility maintenance
+
+---
+
+### 5.2 Activity and Training Management
+
+#### Activity Planning and Scheduling
+
+- Activity scheduling
+- Instructor assignment
+- Boat allocation
+- Resource planning
+
+#### Participant and Group Management
+
+- Participant registration
+- Group assignment
+- Attendance tracking
+
+#### Daily Operations
+
+- Activity supervision
+- Operational control
+- Safety management
+- Handling schedule changes
+
+---
+
+### 5.3 Human Resources and Financial Management
+
+#### Human Resources
+
+- Recruitment
+- Employee training
+- Workforce scheduling
+- Performance monitoring
+
+#### Accounting and Payroll
+
+- Attendance reporting
+- Payroll processing
+- Financial management
+
+#### Marketing and Customer Acquisition
+
+- Activity promotion
+- Marketing channel management
+- Customer registration
+- Customer retention
+
+---
+
+## 6. Conclusion
+
+Daniel Rowing Center relies on multiple independent information systems and several manual processes to support its daily operations. While these systems provide the required functionality for specific business areas, the lack of integration between them creates operational inefficiencies, duplicated work, and limited visibility into real-time organizational data.
+
+These challenges highlight the need for a centralized information system capable of managing customers, employees, activities, equipment, maintenance processes, and financial information within a single integrated platform.
