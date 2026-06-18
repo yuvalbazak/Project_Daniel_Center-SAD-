@@ -1,130 +1,244 @@
-# תהליכים עסקיים — קדם אספקה בע"מ
+# Business Processes — Daniel Rowing Center
 
-**מסמך:** תיאור תהליכים עסקיים ודיאגרמות BPMN  
-**מקור:** ראיונות עם בעלי עניין + דרישות המערכת  
-**מוכן על ידי:** צוות הפרויקט
+**Document:** Business Process Description and BPMN Analysis  
+**Source:** Stakeholder Interviews, Observations and BPMN Models  
+**Prepared by:** Project Team
 
 ---
 
-## סקירת התהליכים העסקיים
+## Business Process Overview
 
-| # | שם התהליך | משתתפים | מורכבות | BPMN |
+| ID | Process Name | Participants | Complexity | BPMN |
 |---|---|---|---|---|
-| BP-01 | הזמנת משלוח — מקבלת לקוח עד אישור קבלה | לקוח, מנהל משמרת, עובד שטח | גבוהה | ✅ |
-| BP-02 | ניהול משמרת — פתיחה, הקצאה, מעקב וסגירה | מנהל משמרת, עובד שטח | גבוהה | ✅ |
-| BP-03 | הזמנת איסוף עצמי | לקוח, מנהל משמרת, עובד מחסן | בינונית | — |
-| BP-04 | ניהול עובדים (קליטה, עדכון, מחיקה) | מנהל משמרת | נמוכה | — |
-| BP-05 | עדכון קטלוג מוצרים | מנהל משמרת | נמוכה | — |
+| BP-01 | Instructor Scheduling, Attendance Reporting and Payroll Synchronization | Coordinator, Instructor, Accounting Manager | High | ✅ |
+| BP-02 | Customer Registration and Membership Management | Customer, Accounting Manager, Coordinator | High | ✅ |
+| BP-03 | Boat and Equipment Maintenance Management | Instructor, Coordinator, Maintenance Staff | Medium | ✅ |
 
 ---
 
-## BP-01 — הזמנת משלוח מקצה לקצה
+# BP-01 — Instructor Scheduling, Attendance Reporting and Payroll Synchronization
 
-### תיאור התהליך
+## Process Objective
 
-התהליך מתחיל כאשר לקוח פונה לחברה (טלפון או WhatsApp) ומבקש אספקת מוצרים לכתובתו. מנהל המשמרת מקבל את הפנייה, בודק זמינות מוצרים, ויוצר הזמנת משלוח במערכת עם פרטי הלקוח, הכתובת ורשימת המוצרים המבוקשים. לאחר מכן הוא מקצה את ההזמנה לעובד שטח פנוי.
+To manage sailing and rowing activities, assign instructors to activities, track attendance, and ensure accurate payroll calculations.
 
-העובד רואה את ההזמנה המוקצית לו במערכת, אוסף את המוצרים מהמחסן, ויוצא לביצוע המשלוח. בשטח הוא עשוי להיתקל בבעיות: לקוח לא נמצא בכתובת, כתובת שגויה, או פגם במוצר. אם הביצוע תקין — הוא מסמן "הושלם" במערכת; אם יש בעיה — הוא מדווח למנהל שמחליט על המשך.
+---
 
-התהליך מסתיים כאשר ההזמנה מסומנת כהושלמה במערכת ומנהל המשמרת רואה את עדכון הסטטוס.
+## Participants
 
-### קישור לבעיות שזוהו
+- Sailing Coordinator
+- Instructor
+- Accounting Manager
+- Center Manager
 
-| בעיה (ראה 03-problems.md) | כיצד התהליך מטפל בה |
+---
+
+## Process Description
+
+The process begins when the coordinator creates the weekly activity schedule and assigns instructors to training sessions.
+
+Each instructor conducts the assigned activity and reports attendance through the Synel system.
+
+At the end of each month, attendance reports are compared against the actual activity schedule. The Accounting Manager and Coordinator manually review discrepancies and update payroll records when necessary.
+
+Special cases such as reserve-duty service require additional verification and supporting documentation.
+
+---
+
+## Link to Identified Problems
+
+| Problem | How the Process Addresses It |
 |---|---|
-| P-01 — יצירה ידנית ואיטית | טופס מובנה עם שדות קבועים ורשימת עובדים |
-| P-02 — הקצאה כפולה | הקצאה ברמת DB — כל הזמנה לעובד אחד |
-| P-03 — עובד לא יודע מה יש לו | ממשק אישי לעובד; הזמנות מסוננות ל-workerId |
-| P-04 — פרטים חסרים בשטח | מסך פרטי הזמנה מלאים עם כתובת + מוצרים + כמויות |
-| P-05 — אין סימון הושלם | כפתור "סמן כהושלם" זמין רק להזמנות פתוחות |
-
-### זרימה עיקרית (Happy Path)
-
-1. לקוח פונה עם בקשת אספקה
-2. מנהל משמרת בודק זמינות מוצרים בקטלוג
-3. מנהל יוצר הזמנת משלוח (כתובת, מוצרים, כמויות)
-4. מנהל מקצה הזמנה לעובד שטח
-5. עובד רואה הזמנה ברשימת ההזמנות שלו
-6. עובד אוסף מוצרים מהמחסן
-7. עובד מבצע משלוח ומוסר ללקוח
-8. עובד מסמן הזמנה כהושלמה
-9. מנהל רואה עדכון סטטוס בזמן אמת
-
-### חריגים
-
-- **מוצר חסר במלאי** → מנהל מציע תחליף ללקוח או דוחה הזמנה
-- **לקוח לא נמצא בכתובת** → עובד מדווח; מנהל מחליט: ניסיון חוזר / ביטול
-- **כתובת שגויה** → עובד מתקשר למנהל; מנהל מתקן ושולח מחדש
+| P-05 — Inconsistent attendance reporting | Attendance reports are compared with actual activities |
+| P-06 — Manual data analysis | Payroll data is consolidated for reporting |
+| P-08 — Organizational knowledge dependency | Activity records are documented centrally |
+| P-10 — Manual attendance tracking | Attendance data is collected for each activity |
 
 ---
 
-## BP-02 — ניהול משמרת
+## Main Flow (Happy Path)
 
-### תיאור התהליך
+1. Coordinator creates activity schedule.
+2. Coordinator assigns instructors.
+3. Instructor conducts activity.
+4. Instructor reports attendance in Synel.
+5. Monthly attendance reports are generated.
+6. Accounting Manager reviews reports.
+7. Payroll is calculated.
+8. Salary is approved and processed.
 
-התהליך מתחיל כאשר מנהל משמרת מתחיל את יומו ונכנס למערכת. הוא מקבל תמונת מצב: אילו הזמנות נפתחו, אילו הושלמו, ואילו עדיין ממתינות מהמשמרת הקודמת.
+---
 
-במהלך המשמרת, מנהל מקבל הזמנות חדשות מלקוחות ויוצר אותן במערכת. במקביל, הוא עוקב אחר ביצוע ההזמנות הפתוחות: בודק סטטוסים, מטפל בחריגים (עובד מעוכב, משלוח שלא הגיע, לקוח מתלונן), ומקצה הזמנות ממתינות לעובדים פנויים.
+## Exceptions
 
-בסיום המשמרת, מנהל מוודא שכל ההזמנות טופלו (הושלמו או הועברו לטיפול המשמרת הבאה), ומנתק.
+### Instructor Forgets to Report Attendance
 
-### קישור לבעיות שזוהו
+- Attendance discrepancy is detected during payroll review.
+- Coordinator verifies activity records.
+- Attendance report is corrected manually.
 
-| בעיה | כיצד התהליך מטפל בה |
+### Reserve Duty Service
+
+- Instructor submits reserve-duty documentation.
+- Accounting Manager verifies documentation.
+- Payroll records are updated accordingly.
+
+---
+
+# BP-02 — Customer Registration and Membership Management
+
+## Process Objective
+
+To register new customers, manage memberships, process payments, and maintain customer records.
+
+---
+
+## Participants
+
+- Customer
+- Accounting Manager
+- Sailing Coordinator
+- Customer Service Staff
+
+---
+
+## Process Description
+
+The process begins when a potential customer contacts the center.
+
+The customer receives information regarding available activities and suitable programs. Personal information is collected and entered into the Fizikal system.
+
+The customer first registers for a trial lesson. Following the trial session, the customer decides whether to continue with a membership or course.
+
+If the customer is eligible for a discount, supporting documents are submitted and reviewed manually.
+
+---
+
+## Link to Identified Problems
+
+| Problem | How the Process Addresses It |
 |---|---|
-| P-03 — עובד ממתין ללא מטלה | מנהל מקצה הזמנות בתחילת משמרת; עובדים רואים מיד |
-| P-05 — מנהל לא יודע סטטוס | מסך מעקב הזמנות מציג סטטוסים עדכניים ללא שיחות טלפון |
-| P-07 — מידע עובדים מפוצל | כל פרטי העובדים ומצב הזמינות נגישים ממסך אחד |
-| P-08 — הרשאות לא נאכפות | מנהל משמרת בלבד מורשה ליצור ולסגור הזמנות |
-| P-11 — אין תמונת מצב | מנהל רואה כמה הזמנות פתוחות/סגורות בכל עת |
-
-### זרימה עיקרית (Happy Path)
-
-1. מנהל נכנס למערכת (Login → ניתוב לממשק מנהל)
-2. מנהל סוקר הזמנות פתוחות ממשמרת קודמת
-3. לכל הזמנה ממתינה — בודק אם יש עובד פנוי ומקצה
-4. מנהל מקבל הזמנה חדשה מלקוח → יוצר אותה במערכת
-5. מנהל עוקב אחר סטטוסים במהלך המשמרת
-6. מנהל מטפל בחריגים (ראה להלן)
-7. בסיום המשמרת — מנהל מוודא שאין הזמנות פתוחות ומנתק
-
-### חריגים
-
-- **עובד מעוכב** → מנהל מקצה מחדש לעובד פנוי אחר
-- **לקוח מתלונן על הזמנה שלא הגיעה** → מנהל בודק סטטוס; אם "הושלם" — בעיה בצד הלקוח; אם "פתוחה" — שולח עובד
-- **הזמנה לא טופלה עד סוף משמרת** → מנהל מעביר אחריות למנהל המשמרת הבאה
+| P-04 — Manual customer registration | Customer information is collected and managed |
+| P-07 — Manual discount approval | Discount requests are processed |
+| P-02 — Fragmented information | Customer data is maintained across systems |
 
 ---
 
-## BP-03 — הזמנת איסוף עצמי
+## Main Flow (Happy Path)
 
-### תיאור התהליך
-
-דומה ל-BP-01 אך ללא שלב המשלוח. הלקוח מגיע בעצמו למחסן. מנהל יוצר הזמנת איסוף עם פרטי הסניף (במקום כתובת משלוח). עובד מכין את ההזמנה במחסן. כאשר הלקוח מגיע ואוסף — עובד מסמן "הושלם".
-
----
-
-## BP-04 — ניהול עובדים
-
-### תיאור התהליך
-
-מנהל משמרת מנהל את רשימת העובדים: הוספת עובד חדש (שם, תפקיד, טלפון), עדכון פרטים קיימים, ומחיקת עובד שעזב. כל שינוי מתעדכן מיידית ב-DB וגלוי לכל מנהל משמרת. עובד מחוק לא מופיע ברשימת ההקצאה.
+1. Customer contacts the center.
+2. Activity options are presented.
+3. Customer information is collected.
+4. Trial lesson is scheduled.
+5. Customer completes trial lesson.
+6. Customer decides to enroll.
+7. Membership is created.
+8. Payment is processed.
+9. Customer becomes an active participant.
 
 ---
 
-## BP-05 — עדכון קטלוג מוצרים
+## Exceptions
 
-### תיאור התהליך
+### Customer Cancels After Trial Lesson
 
-מנהל משמרת מעדכן את קטלוג המוצרים: הוספת מוצר חדש (שם, קטגוריה, מחיר), עדכון מחיר קיים, ומחיקת מוצר שהופסק. הקטלוג המעודכן נטען לזיכרון בזמן אתחול ומשמש את כל מסכי יצירת ההזמנות.
+- Registration process is closed.
+- No membership is created.
+
+### Discount Request Submitted
+
+- Customer uploads supporting documents.
+- Accounting Manager reviews eligibility.
+- Discount is approved or rejected.
 
 ---
 
-## דיאגרמות BPMN
+# BP-03 — Boat and Equipment Maintenance Management
 
-שתי הדיאגרמות נוצרו עבור BP-01 ו-BP-02 — התהליכים המורכבים ביותר. קבצי ה-HTML הם קבצים עצמאיים הניתנים לפתיחה בדפדפן.
+## Process Objective
 
-| תהליך | קובץ |
+To ensure the availability, safety, and operational condition of boats and sailing equipment.
+
+---
+
+## Participants
+
+- Instructor
+- Sailing Coordinator
+- Maintenance Staff
+- External Technician
+
+---
+
+## Process Description
+
+The process begins when an instructor identifies a fault in a boat or equipment item.
+
+The issue is reported to the coordinator, typically through WhatsApp communication.
+
+The coordinator evaluates the issue and determines whether an alternative boat is available.
+
+Minor issues are repaired internally. More complex issues require external maintenance services.
+
+Equipment status and maintenance activities are manually recorded in Excel spreadsheets.
+
+---
+
+## Link to Identified Problems
+
+| Problem | How the Process Addresses It |
 |---|---|
-| BP-01 — הזמנת משלוח מקצה לקצה | `bpmn-bp01-delivery-order.html` |
-| BP-02 — ניהול משמרת | `bpmn-bp02-shift-management.html` |
+| P-01 — Lack of maintenance tracking | Maintenance activities are documented |
+| P-02 — Fragmented information | Equipment information is centralized |
+| P-08 — Knowledge dependency | Maintenance history is preserved |
+
+---
+
+## Main Flow (Happy Path)
+
+1. Instructor identifies a fault.
+2. Fault is reported to the coordinator.
+3. Coordinator evaluates equipment availability.
+4. Alternative equipment is assigned if available.
+5. Maintenance action is performed.
+6. Equipment status is updated.
+7. Boat returns to operational use.
+
+---
+
+## Exceptions
+
+### Alternative Boat Available
+
+- Activity continues using replacement equipment.
+- Faulty boat is sent for maintenance.
+
+### No Alternative Boat Available
+
+- Coordinator contacts other municipal centers.
+- External equipment is borrowed if available.
+
+### Major Equipment Failure
+
+- External technician is contacted.
+- Equipment remains unavailable until repairs are completed.
+
+---
+
+# BPMN Diagrams
+
+The BPMN diagrams were created for the three primary business processes identified during the current-state analysis.
+
+| Process | BPMN File |
+|---|---|
+| BP-01 — Instructor Scheduling, Attendance Reporting and Payroll Synchronization | `bpmn-payroll-synchronization.html` |
+| BP-02 — Customer Registration and Membership Management | `bpmn-customer-registration.html` |
+| BP-03 — Boat and Equipment Maintenance Management | `bpmn-boat-maintenance.html` |
+
+---
+
+## Summary
+
+The three business processes analyzed represent the core operational activities of Daniel Rowing Center. All three processes currently depend on manual procedures, disconnected systems, and personal communication channels.
+
+The proposed My Daniel information system will integrate these processes into a centralized platform, improving operational efficiency, information visibility, reporting capabilities, and overall service quality.
