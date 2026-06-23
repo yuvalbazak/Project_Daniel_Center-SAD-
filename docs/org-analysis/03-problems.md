@@ -1,10 +1,64 @@
-# Business Problems Analysis — Daniel Rowing Center
+# ניתוח בעיות עסקיות — מרכז דניאל לחתירה / Business Problems Analysis — Daniel Rowing Center
 
-**Document:** Current State Analysis — Business Problems Analysis  
-**Source:** Stakeholder Interviews and Field Observations (March–April 2026)  
-**Prepared by:** Project Team
+**מסמך:** ניתוח מצב קיים — ניתוח בעיות עסקיות / Current State Analysis — Business Problems Analysis
+**מקור / Source:** ראיונות בעלי עניין ותצפיות שטח / Stakeholder Interviews and Field Observations (March–April 2026)
+**הוכן על ידי / Prepared by:** צוות הפרויקט / Project Team
 
 ---
+
+## עברית / Hebrew
+
+### טבלת בעיות מרכזיות
+
+| מספר | גורם לבעיה | בעיה עסקית | הועלה ע"י | פתרון רצוי |
+|------|------------|------------|-----------|------------|
+| 1 | ניהול תחזוקה ותקלות בטבלאות אקסל והעברת המידע בווצאפ | חוסר מעקב מסודר אחר תקלות, זמינות ציוד וסירות והיסטורית טיפולים | מנהל המרכז ורכז השיט | מעבר למערכת מידע לניהול ציוד עם רישום אוטומטי ובקרה בזמן אמת |
+| 2 | פיזור מידע בין מערכות שונות וקבצי אקסל | חוסר נגישות למידע מלא בזמן אמת, קושי בקבלת החלטות וצורך בהצלבות ידניות | מנהל המרכז | הטמעת מערכת מידע מרכזית המאחדת את כלל הנתונים ומאפשרת גישה מהירה ועדכנית למידע |
+| 3 | מחסור בילדים ומדריכים בענף הקיאקים | ניצול נמוך של משאבים והפסד כלכלי | מנהל המרכז | שיפור תהליכי שיווק וגיוס לקוחות |
+| 4 | איסוף פרטי הלקוחות מתבצע ידנית באמצעות שיחת טלפון | סיכון לטעויות בהזנת נתונים, חוסר אחידות במידע, ותלות בעובד שמבצע את הרישום | מנהלת החשבונות | פיתוח טופס הרשמה דיגיטלי |
+| 5 | דיווח שעות עבודה מתבצע באופן לא עקבי על ידי העובדים, לצד צורך בביצוע סנכרון ותיקון ידני | עומס על הרכז ומנהלת החשבונות, סיכון לטעויות בחישוב השכר | מנהל המרכז, רכז השיט ומנהלת החשבונות | מערכת משולבת המחברת בין נתוני הפעילות בפועל לבין דיווחי השעות, ומבצעת השוואה אוטומטית, זיהוי חריגות ומאפשרת השלמת דיווחים |
+| 6 | הסתמכות על דיווחים ידניים של רכזים ושימוש באקסל לצורך ניתוח נתונים | קושי בהפקת תובנות וקבלת החלטות מבוססות נתונים, תלות בעיבוד ידני באקסל | מנהל המרכז ומנהלת החשבונות | הטמעת מערכת BI מרכזית המחוברת לכל מערכות הארגון, המאפשרת איסוף, עיבוד והצגת נתונים בזמן אמת באמצעות דוחות ודשבורדים אוטומטיים |
+| 7 | תהליך מתן ההנחות מתבצע באופן ידני | מתן הנחות ללקוחות שאינם זכאים, פגיעה בהכנסות הארגון | מנהלת החשבונות | הטמעת מערכת לניהול הנחות, הכוללת אימות זכאות אוטומטי, העלאת מסמכים בצורה מובנית ובקרה בזמן אמת |
+| 8 | היעדר בסיס נתונים מסודר ותיעוד ארגוני של מידע מקצועי ותפעולי | תלות בידע אישי של עובדים, קושי בשימור מידע ואובדן ידע ארגוני | רכז השיט | הקמת מאגר מידע ארגוני מרכזי לתיעוד מידע על חניכים, מדריכים ואירועים חריגים |
+| 9 | התקשורת עם ההורים מתבצעת בעיקר דרך טלפונים, שיחות אישיות וקבוצות וואטסאפ | תלות ברכז לצורך העברת מידע, סיכון לכך שהורים לא יקבלו עדכונים חשובים וחוסר אחידות בתקשורת | רכז השיט | הטמעת מערכת תקשורת מרכזית מול הורים הכוללת שליחת עדכונים והתראות באופן אוטומטי ומתועד |
+| 10 | מעקב נוכחות מתבצע ידנית באמצעות Google Sheets | קושי במעקב רציף אחר היעדרויות תלמידים, סיכון לטעויות ועדכון לא עקבי בין המדריכים | רכז השיט | הטמעת מערכת נוכחות דיגיטלית עם עדכון בזמן אמת, התראות על היעדרויות חריגות ותיעוד מרכזי |
+
+---
+
+### תיאור המצב הקיים וההשפעה העסקית
+
+מרכז דניאל לחתירה מסתמך כיום על מספר מערכות מידע מנותקות, ביניהן Priority, Synel, Fizikal, Kehila, Coing, גיליונות אקסל, Google Sheets, קבוצות וואטסאפ ושיחות טלפון. תהליכים עסקיים רבים עדיין מחייבים התערבות ידנית, כולל רישום לקוחות, מעקב נוכחות, אימות שכר, ניהול תחזוקה, אישור הנחות ותקשורת עם הורים.
+
+כתוצאה מכך:
+
+- המידע מפוזר בין מערכות שונות.
+- עומס אדמיניסטרטיבי גבוה.
+- אימות שכר מחייב בדיקה ידנית חודשית.
+- קשה לעקוב אחר היסטוריית תחזוקת ציוד.
+- תהליך רישום לקוחות איטי ועלול לכלול שגיאות.
+- הידע הארגוני תלוי מאוד בעובדים מסוימים.
+- ההנהלה חסרה נראות בזמן אמת לפעילות התפעולית.
+
+---
+
+### הפתרון המוצע
+
+הטמעת מערכת **My Daniel**, פלטפורמת מידע מרכזית המשלבת:
+
+- ניהול לקוחות
+- ניהול עובדים
+- תזמון פעילויות
+- מעקב נוכחות
+- אימות שכר
+- ניהול סירות וציוד
+- מעקב תחזוקה
+- תקשורת עם הורים
+- ניהול הנחות
+- דוחות BI
+
+---
+
+## English
 
 # Organizational Problem Statement
 
@@ -94,15 +148,7 @@ The system will provide a single source of truth for all operational and manager
 
 ---
 
-## 6. Summary
-
-Daniel Rowing Center currently operates through a combination of disconnected systems and manual processes. This situation creates inefficiencies, increases dependency on employees, and limits management's ability to monitor operations effectively.
-
-A centralized information system would improve operational efficiency, reduce errors, enhance customer service, and provide management with real-time access to organizational information.
-
----
-
-# Problems Table
+## 6. Problems Table
 
 | ID | Root Cause | Business Problem | Reported By | Proposed Solution |
 |------|------|------|------|------|
@@ -119,62 +165,45 @@ A centralized information system would improve operational efficiency, reduce er
 
 ---
 
-# Problem Categorization
+## 7. Problem Categorization
 
-## Information Management Problems
+### Information Management Problems
 
 - P-02: Fragmented Information Systems
 - P-08: Lack of Organizational Knowledge Management
 
-### Impact
-
-- Duplicate work
-- Inconsistent data
-- Delayed decision-making
-- Knowledge loss
+**Impact:** Duplicate work, inconsistent data, delayed decision-making, knowledge loss.
 
 ---
 
-## Operational Process Problems
+### Operational Process Problems
 
 - P-04: Manual Customer Registration
 - P-05: Payroll Validation Process
 - P-10: Manual Attendance Tracking
 
-### Impact
-
-- High administrative workload
-- Increased human errors
-- Slow process execution
+**Impact:** High administrative workload, increased human errors, slow process execution.
 
 ---
 
-## Equipment and Maintenance Problems
+### Equipment and Maintenance Problems
 
 - P-01: Equipment Maintenance Tracking
 
-### Impact
-
-- Lack of maintenance visibility
-- Missing maintenance history
-- Reduced equipment utilization
+**Impact:** Lack of maintenance visibility, missing maintenance history, reduced equipment utilization.
 
 ---
 
-## Customer and Communication Problems
+### Customer and Communication Problems
 
 - P-07: Manual Discount Validation
 - P-09: Parent Communication Management
 
-### Impact
-
-- Poor customer experience
-- Revenue leakage
-- Communication inefficiencies
+**Impact:** Poor customer experience, revenue leakage, communication inefficiencies.
 
 ---
 
-# Business Justification
+## 8. Business Justification
 
 The analysis indicates that the organization's most significant operational challenges stem from manual processes, fragmented information systems, and lack of integration between departments.
 

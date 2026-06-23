@@ -1,10 +1,54 @@
-# Business Processes — Daniel Rowing Center
+# תהליכים עסקיים — מרכז דניאל לחתירה / Business Processes — Daniel Rowing Center
 
-**Document:** Business Process Description and BPMN Analysis  
-**Source:** Stakeholder Interviews, Observations and BPMN Models  
-**Prepared by:** Project Team
+**מסמך:** תיאור תהליכים עסקיים וניתוח BPMN / Business Process Description and BPMN Analysis
+**מקור / Source:** ראיונות בעלי עניין, תצפיות ומודלי BPMN / Stakeholder Interviews, Observations and BPMN Models
+**הוכן על ידי / Prepared by:** צוות הפרויקט / Project Team
 
 ---
+
+## עברית / Hebrew
+
+### סקירת תהליכים עסקיים
+
+| מזהה | שם התהליך | משתתפים | BPMN |
+|------|-----------|----------|------|
+| BP-01 | תהליך שיבוץ, דיווח וסנכרון שכר מדריכים | רכז, מדריך, מנהלת חשבונות | ✅ |
+| BP-02 | תהליך רישום מנויים למרכז דניאל | לקוח, מנהלת חשבונות, רכז | ✅ |
+| BP-03 | תהליך ניהול שוטף של אחזקת הסירות | מדריך, רכז, צוות אחזקה | ✅ |
+
+---
+
+### BP-01 — תהליך שיבוץ, דיווח וסנכרון שכר מדריכים
+
+**מטרת התהליך:** ניהול פעילויות שיט וחתירה, שיבוץ מדריכים לפעילויות, מעקב נוכחות והבטחת חישוב שכר מדויק.
+
+**משתתפים:** רכז השיט, מדריך, מנהלת חשבונות, מנהל המרכז.
+
+**BPMN:** ראו קובץ `bpmn-bp01-Instructor Scheduling, Attendance Reporting and Payroll Synchronization.pdf.pdf`
+
+---
+
+### BP-02 — תהליך רישום מנויים למרכז דניאל
+
+**מטרת התהליך:** רישום לקוחות חדשים, ניהול מנויים, עיבוד תשלומים ותחזוקת רשומות לקוחות.
+
+**משתתפים:** לקוח, מנהלת חשבונות, רכז השיט, צוות שירות לקוחות.
+
+**BPMN:** ראו קובץ `bpmn-bp02-Customer Registration and Membership Management.pdf.pdf`
+
+---
+
+### BP-03 — תהליך ניהול שוטף של אחזקת הסירות
+
+**מטרת התהליך:** הבטחת זמינות, בטיחות ומצב תפעולי תקין של הסירות וציוד השיט.
+
+**משתתפים:** מדריך, רכז השיט, צוות אחזקה, טכנאי חיצוני.
+
+**BPMN:** ראו קובץ `bpmn-bp03-Boat and Equipment Maintenance Management.pdf.pdf`
+
+---
+
+## English
 
 ## Business Process Overview
 
@@ -231,9 +275,9 @@ The BPMN diagrams were created for the three primary business processes identifi
 
 | Process | BPMN File |
 |---|---|
-| BP-01 — Instructor Scheduling, Attendance Reporting and Payroll Synchronization | `bpmn-payroll-synchronization.html` |
-| BP-02 — Customer Registration and Membership Management | `bpmn-customer-registration.html` |
-| BP-03 — Boat and Equipment Maintenance Management | `bpmn-boat-maintenance.html` |
+| BP-01 — Instructor Scheduling, Attendance Reporting and Payroll Synchronization | `bpmn-bp01-Instructor Scheduling, Attendance Reporting and Payroll Synchronization.pdf.pdf` |
+| BP-02 — Customer Registration and Membership Management | `bpmn-bp02-Customer Registration and Membership Management.pdf.pdf` |
+| BP-03 — Boat and Equipment Maintenance Management | `bpmn-bp03-Boat and Equipment Maintenance Management.pdf.pdf` |
 
 ---
 
